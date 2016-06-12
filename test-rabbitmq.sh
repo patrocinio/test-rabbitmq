@@ -11,6 +11,7 @@ then
   URL=$1
 else
   echo "Usage test-rabbit.sh <RabbitMQ-URL>"
+ echo Sample: test-rabbit.sh amqps://user:edu0range@aws-us-east-1-portal.15.dblayer.com:10879/excellent-rabbitmq-78
   exit 1
 fi
 
