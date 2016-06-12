@@ -13,10 +13,13 @@ var host = (process.env.VCAP_APP_HOST || '0.0.0.0');
 
 http.createServer(function(req, res) {
   
+  console.log ("Setting status...");
   res.writeHead(200, {'Content-Type': 'text/plain'});
 
+  console.log ("Creating connection...");
   var conn = amqp.createConnection({url: credentials.url});
 
+  console.log ("Exchanging message...");
   conn.on('ready', function() {
     var exchange = conn.exchange('test-event', {type: 'fanout'});
     conn.queue('test-event-queue', function(q) {
@@ -30,5 +33,6 @@ http.createServer(function(req, res) {
     });
   });  
 
+  console.log ("Completed!");
 }).listen(port, host);
 
