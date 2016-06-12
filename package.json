@@ -1,0 +1,8 @@
+{
+  "version":"1.0.0",
+  "scripts":{"start":"node app.js"},
+  "dependencies":{"amqp":"*"},
+  "name":"hellorabbitmq",
+  "description":"This is a Bluemix demo"
+}
+
